@@ -10,12 +10,14 @@ const requireLogin = require('../middleware/requireLogin')
 const nodemailer = require('nodemailer')
 const sendgridTransport = require('nodemailer-sendgrid-transport')
 const {SENDGRID_API,EMAIL} = require('../config/keys')
-//
+
+
+// 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
 
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key:"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"
+        api_key:"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"
     }
 }))
 
@@ -42,7 +44,7 @@ router.post('/signup',(req,res)=>{
             .then(user=>{
                 transporter.sendMail({
                     to:user.email,
-                    from:"no-reply@insta.com",
+                    from:"aritrochakraborty29@gmail.com",
                     subject:"signup success",
                     html:"<h1>welcome to instagram</h1>"
                 })
@@ -105,11 +107,11 @@ router.post('/reset-password',(req,res)=>{
              user.save().then((result)=>{
                  transporter.sendMail({
                      to:user.email,
-                     from:"no-replay@insta.com",
+                     from:"aritrochakraborty29@gmail.com",
                      subject:"password reset",
                      html:`
                      <p>You requested for password reset</p>
-                     <h5>click in this <a href="${EMAIL}/reset/${token}">link</a> to reset password</h5>
+                     <h5>click in this <a href="http://localhost:3000/reset/${token}">link</a> to reset password</h5>
                      `
                  })
                  res.json({message:"check your email"})
