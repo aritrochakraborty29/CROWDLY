@@ -1,6 +1,7 @@
 import React,{useState,useContext,} from 'react'
 import {Link,useHistory,useParams} from 'react-router-dom'
 import M from 'materialize-css'
+import Logo from '../logo.png'
 const SignIn  = ()=>{
     const history = useHistory()
     const [password,setPasword] = useState("")
@@ -34,7 +35,8 @@ const SignIn  = ()=>{
    return (
       <div className="mycard">
           <div className="card auth-card input-field">
-            <h2>Instagram</h2>
+            <img src={Logo} style={{maxWidth: "180px", height: "auto", display: "block", textAlign: "center", marginLeft: "30%"}} />
+            <h2>Crowdly</h2>
         
             <input
             type="password"

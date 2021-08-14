@@ -12,12 +12,12 @@ const sendgridTransport = require('nodemailer-sendgrid-transport')
 const {SENDGRID_API,EMAIL} = require('../config/keys')
 
 
-// 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
+// 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
 
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key:"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"
+        api_key:"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"
     }
 }))
 
@@ -46,7 +46,7 @@ router.post('/signup',(req,res)=>{
                     to:user.email,
                     from:"aritrochakraborty29@gmail.com",
                     subject:"signup success",
-                    html:"<h1>welcome to instagram</h1>"
+                    html:"<h1><b>welcome to instagram</b></h1>"
                 })
                 res.json({message:"saved successfully"})
             })

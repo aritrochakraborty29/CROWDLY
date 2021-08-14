@@ -2,6 +2,7 @@ import React,{useState,useContext,} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import {UserContext} from '../../App'
 import M from 'materialize-css'
+import Logo from '../logo.png'
 const SignIn  = ()=>{
     const {state,dispatch} = useContext(UserContext)
     const history = useHistory()
@@ -41,7 +42,8 @@ const SignIn  = ()=>{
    return (
       <div className="mycard">
           <div className="card auth-card input-field">
-            <h2>Instagram</h2>
+            <img src={Logo} style={{maxWidth: "180px", height: "auto", display: "block", textAlign: "center", marginLeft: "30%"}} />
+            <h2>Crowdly</h2>
             <input
             type="text"
             placeholder="email"
@@ -59,10 +61,10 @@ const SignIn  = ()=>{
             >
                 Login
             </button>
-            <h5>
-                <Link to="/signup">Dont have an account ?</Link>
-            </h5>
-            <h6>
+            <h6 style={{color: '#64b5f6'}}>
+            Dont have an account!<Link to="/signup">  <b>Sign up</b></Link>
+            </h6>
+            <h6 style={{color: '#64b5f6'}}>
                 <Link to="/reset">Forgot password ?</Link>
             </h6>
     
