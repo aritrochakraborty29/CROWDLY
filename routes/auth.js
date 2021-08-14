@@ -17,7 +17,7 @@ const {SENDGRID_API,EMAIL} = require('../config/keys')
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key:"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"
+        api_key:"#"
     }
 }))
 
@@ -35,7 +35,7 @@ router.post('/signup',(req,res)=>{
       .then(hashedpassword=>{
             const user = new User({
                 email,
-                password:hashedpassword,
+                password:#,
                 name,
                 pic
             })
@@ -43,10 +43,7 @@ router.post('/signup',(req,res)=>{
             user.save()
             .then(user=>{
                 transporter.sendMail({
-                    to:user.email,
-                    from:"aritrochakraborty29@gmail.com",
-                    subject:"signup success",
-                    html:"<h1><b>welcome to instagram</b></h1>"
+                    
                 })
                 res.json({message:"saved successfully"})
             })
